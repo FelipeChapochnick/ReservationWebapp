@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reservation Web App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <h1>Reservation Form</h1>
+    <form id="reservationForm">
+        <label for="reservationDay">Reservation Day:</label>
+        <input type="date" id="reservationDay" min="" max="" required>
+
+        <label for="smokingOption">Smoking or Non-Smoking:</label>
+        <select id="smokingOption" required>
+            <option value="smoking">Smoking</option>
+            <option value="non-smoking">Non-Smoking</option>
+        </select>
+
+        <label for="numberOfPeople">Number of People:</label>
+        <select id="numberOfPeople" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+
+        <label for="reservationTime">Reservation Time:</label>
+        <select id="reservationTime" required>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+            <option value="18:30">18:30</option>
+            <option value="19:00">19:00</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
+        </select>
+
+        <label for="specialRequests">Special Requests:</label>
+        <textarea id="specialRequests" rows="4"></textarea>
+
+        <button type="button" onclick="showPersonalForm()">Continue</button>
+    </form>
+
+    <form id="personalForm" style="display: none;">
+        <label for="phoneNumber">Phone Number:</label>
+        <div class="phone-number">
+            <select id="countryCode">
+                <option value="+1">+1 (USA)</option>
+                <option value="+44">+44 (UK)</option>
+                <option value="+61">+61 (Australia)</option>
+                <!-- Add more country codes as needed -->
+            </select>
+            <input type="tel" id="phoneNumberInput" required>
+        </div>
+
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+
+        <label for="birthday">Birthday (Optional):</label>
+        <input type="date" id="birthday">
+
+        <label for="gender">Gender (Optional):</label>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <button id="reservationButton" type="button" onclick="makeReservation()">Make Reservation</button>
+    </form>
+
+    <div id="successMessage" style="display: none;">
+        <h2>Success!</h2>
+        <p>Your request has been submitted successfully.</p>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
